@@ -2,12 +2,13 @@ var exp=require('express');
 var bp=require('body-parser');
 var app=exp();
 app.use(exp.static('scripts'))
+app.use(exp.static('public'))
 app.use(bp.urlencoded({extended: false }));
 
 app.listen(9000,function(){
     console.log("running on 9000");
 });
-
+app.use(express.static(path.join(__dirname,'public')));
 app.get('/getform',function(req,res){
     res.sendFile(__dirname+'/form.html')
 })
