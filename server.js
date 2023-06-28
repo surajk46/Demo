@@ -2,7 +2,6 @@ var exp=require('express');
 var bp=require('body-parser');
 var app=exp();
 app.use(exp.static('scripts'))
-app.use(exp.static('public'))
 app.use(bp.urlencoded({extended: false }));
 
 app.listen(9000,function(){
